@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Analytics Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>AdminAnalytics</h2>
+    <ul>
+        <li class="active">Dashboard</li>
+        <li>Sales</li>
+        <li>Reports</li>
+        <li>Users</li>
+        <li>Settings</li>
+    </ul>
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+        <h1>Analytics Overview</h1>
+        <div class="date">February 2026</div>
+        
+    </div>
+
+    
+    <div class="cards">
+        <div class="card positive">
+            <h3>Total Revenue</h3>
+            <p>42,500</p>
+            <span>+12% vs last month</span>
+        </div>
+        <div class="card negative">
+            <h3>Conversion Rate</h3>
+            <p>3.8%</p>
+            <span>-1.2% vs last month</span>
+        </div>
+        <div class="card positive">
+            <h3>New Customers</h3>
+            <p>1,320</p>
+            <span>+8% vs last month</span>
+        </div>
+        <div class="card">
+            <h3>Avg. Order Value</h3>
+            <p>1000</p>
+            <span>Stable</span>
+        </div>
+    </div>
+
+    
+    <div class="charts">
+        <div class="chart-box large">
+            <h3>Revenue Trend</h3>
+            <canvas id="revenueChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h3>Traffic Sources</h3>
+            <canvas id="trafficChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h3>Device Usage</h3>
+            <canvas id="deviceChart"></canvas>
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <h3>Sales Target Progress</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width:75%">75%</div>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
