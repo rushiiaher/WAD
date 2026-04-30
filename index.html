@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+        }
+
+        .container{
+            width:400px;
+            margin:50px auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>User Registration</h2>
+
+    <form id="registrationForm">
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <br>
+    <a href="display.html">View Registered Users</a>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
