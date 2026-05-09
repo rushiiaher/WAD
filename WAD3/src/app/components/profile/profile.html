@@ -1,0 +1,36 @@
+<div class="auth-container">
+  <div class="glass-card" style="max-width: 600px;" *ngIf="user">
+    <div class="profile-header">
+      <div class="avatar">{{ getInitials(user.name) }}</div>
+      <div class="profile-info">
+        <h2>{{ user.name }}</h2>
+        <p>Premium Member</p>
+      </div>
+    </div>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="data-label">Email Address</div>
+        <div class="data-value">{{ user.email }}</div>
+      </div>
+      
+      <div class="data-card">
+        <div class="data-label">User ID</div>
+        <div class="data-value">{{ user.id || 'N/A' }}</div>
+      </div>
+      
+      <div class="data-card" style="grid-column: 1 / -1;">
+        <div class="data-label">Auth Token</div>
+        <div class="data-value" style="font-family: monospace; font-size: 0.9rem; word-break: break-all;">
+          {{ user.token || 'N/A' }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center">
+      <button class="btn btn-outline" style="width: auto; padding: 0.75rem 2rem;" (click)="logout()">
+        Sign Out
+      </button>
+    </div>
+  </div>
+</div>

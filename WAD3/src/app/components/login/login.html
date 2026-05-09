@@ -1,0 +1,50 @@
+<div class="auth-container">
+  <div class="glass-card">
+    <h1 class="card-title">Welcome Back</h1>
+    <p class="card-subtitle">Enter your credentials to access your account</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control" 
+          formControlName="email" 
+          placeholder="name@example.com"
+        >
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error-message">
+          <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
+          <span *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+        </div>
+      </div>
+
+      <div class="form-group mb-6">
+        <label class="form-label" for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          class="form-control" 
+          formControlName="password" 
+          placeholder="••••••••"
+        >
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error-message">
+          Password is required
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message mb-6 text-center">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+        Sign In
+      </button>
+    </form>
+
+    <p class="text-center mt-6 text-sm">
+      Don't have an account? 
+      <a routerLink="/register" class="link">Create one now</a>
+    </p>
+  </div>
+</div>
