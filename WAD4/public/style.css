@@ -1,0 +1,19 @@
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    color: crimson;
+    font-style: italic;
+    text-align: center;
+}
+
+h2 {
+    color: blue;
+    text-align: center;
+}
+
+ol {
+    width: fit-content;
+    margin: 0 auto;
+}
