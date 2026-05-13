@@ -1,0 +1,76 @@
+# INITIALIZE GIT REPOSITORY
+
+git init
+
+# CONFIGURE GIT USER (ONLY IF NEEDED)
+
+# If you get:
+# "Please tell me who you are"
+
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+# ADD FILES
+
+git add .
+
+# FIRST COMMIT
+
+git commit -m "Initial commit"
+
+# If you get:
+# "nothing to commit"
+# then skip commit and continue
+
+# RENAME BRANCH TO MAIN
+
+git branch -M main
+
+# REMOVE OLD REMOTE IF IT EXISTS
+
+# If you get:
+# "remote origin already exists"
+
+git remote remove origin
+
+# ADD GITHUB REMOTE
+
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+
+# VERIFY REMOTE
+
+git remote -v
+
+# PULL FIRST IF REPOSITORY ALREADY HAS FILES
+
+# If GitHub repo already contains README/license/etc
+# and you get:
+# "failed to push some refs"
+
+git pull origin main --rebase --allow-unrelated-histories
+
+# PUSH TO GITHUB
+
+git push -u origin main
+
+# IF AUTHENTICATION FAILS
+
+# GitHub no longer accepts passwords.
+# Use Personal Access Token (PAT) instead.
+
+# Generate token:
+# https://github.com/settings/tokens
+
+# Then use username + token when prompted.
+
+# IF PUSH IS REJECTED AGAIN
+
+git fetch origin
+git pull origin main --rebase
+git push -u origin main
+
+# FORCE PUSH (USE CAREFULLY)
+
+# Only if absolutely necessary:
+
+git push -u origin main --force

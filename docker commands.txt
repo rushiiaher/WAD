@@ -1,0 +1,36 @@
+# START & ENABLE DOCKER
+sudo systemctl enable docker
+sudo systemctl start docker	
+
+# VERIFY INSTALLATION
+docker --version
+
+# TEST DOCKER
+docker run hello-world
+
+# CREATE SAMPLE APP
+mkdir myapp
+cd myapp
+
+echo 'print("Hello from Docker")' > app.py
+
+# CREATE DOCKERFILE
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+
+# BUILD IMAGE
+docker build -t my-python-app .
+
+# SEE IMAGES
+docker images
+
+# RUN CONTAINER
+docker run my-python-app
+
+# SEE RUNNING CONTAINERS
+docker ps
+
+# SEE ALL CONTAINERS
+docker ps -a
